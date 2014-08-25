@@ -1,0 +1,18 @@
+<div class="edit-container">
+	<h1 class="edit">Create a Post</h1>
+<div class="edit-form">
+	<%= form_for(:post, :url => {:controller => 'posts', :action => 'create'}) do |f| %>
+		<%= f. text_field 		:title,	placeholder: "Title" %>
+		<%= f. text_area 		:content,	placeholder: "Content" %>
+		<%= f.submit	"Save Changes" %>
+	<% end %>
+
+	<% if @post.errors.any? %>
+		<ul class="edit_errors">
+			<% for message_error in @post.errors.full_messages %>
+				<li><%= message_error %></li>
+			<% end %>
+		</ul>
+	<% end %>
+</div>
+</div>

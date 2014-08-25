@@ -1,0 +1,22 @@
+<div class="create-container">
+	<h1 class="create">Create an Account</h1>
+<div class="signup_form">
+	<%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do |f| %>
+		<%= f. text_field 		:first_name,	placeholder: "First Name" %>
+		<%= f. text_field 		:last_name,	placeholder: "Last Name" %>
+		<%= f. email_field		:email, 		placeholder: "Email" %>
+		<%= f. password_field	:password,	placeholder: "Password" %>
+		<%= f. password_field	:password_confirmation,	placeholder: "Confirm Password" %>
+		<%= f.submit	"Create" %>
+	<% end %>
+
+	<% if @user.errors.any? %>
+		<ul class="signup_errors">
+			<% for message_error in @user.errors.full_messages %>
+				<li><%= message_error %></li>
+			<% end %>
+		</ul>
+	<% end %>
+</div>
+</div>
+

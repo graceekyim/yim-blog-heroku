@@ -1,0 +1,17 @@
+<div class="container">
+	<% @posts.each do |post| %>
+
+		<div class="post">
+			<h3 class="title"><%= post.title %> <span class="post-date"><%= post.date %></h3>
+			<h5 class="username"><%= post.user.full_name %></h5>
+
+			<p class="content"><%= post.content %></p>
+
+			<% if post.user == current_user %>
+				<a href="/posts/<%= post.id %>/edit" class="post-buttons"><button>Edit</button></a></li>
+				<a href="/posts/<%= post.id %>/delete" class="post-buttons"><button>Delete</button></a></li>
+			<% end %>
+		</div>
+	<% end %>
+
+</div>

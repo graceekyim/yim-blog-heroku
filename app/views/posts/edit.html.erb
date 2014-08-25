@@ -1,0 +1,22 @@
+<div class="edit-container">
+	<h1 class="edit">Edit a Post</h1>
+<div class="edit-form">
+	<%= form_for(:post, :url => {:controller => 'posts', :action => 'update'}) do |f| %>
+		<%= f. label :title %>
+		<%= f. text_field 		:title,	placeholder: "Title" %>
+		<%= f. label :content %>
+		<%= f. text_area 		:content,	placeholder: "Content" %>
+		<%= f.submit	"Save Changes" %>
+	<% end %>
+
+	<%= button_to 'Delete', post_path(@post.id), :method => :delete %>
+
+	<% if @post.errors.any? %>
+		<ul class="edit_errors">
+			<% for message_error in @post.errors.full_messages %>
+				<li><%= message_error %></li>
+			<% end %>
+		</ul>
+	<% end %>
+</div>
+</div>
