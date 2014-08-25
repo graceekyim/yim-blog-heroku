@@ -4157,3 +4157,43 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 22:34:38
 
 
 Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 22:34:38 -0500
+  [1m[36m (18.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (16.9ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20140825014830)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (34.8ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying(255), "last_name" character varying(255), "email" character varying(255), "password_digest" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (16.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140825014830"]]
+  [1m[36m (15.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePosts (20140825014902)
+  [1m[35m (15.5ms)[0m  BEGIN
+  [1m[36m (19.9ms)[0m  [1mCREATE TABLE "posts" ("id" serial primary key, "title" character varying(255), "content" text, "user_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140825014902"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (1.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'grace@grace.com' LIMIT 1[0m
+  [1m[35mSQL (16.2ms)[0m  INSERT INTO "users" ("created_at", "email", "first_name", "last_name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-08-25 03:52:48.160324"], ["email", "grace@grace.com"], ["first_name", "Grace"], ["last_name", "Yim"], ["password_digest", "$2a$10$5QAGN4UxKHjYzjyuBmw.qOGC8.HyYoYf4zmFocCqt88Z8WiholZ56"], ["updated_at", "2014-08-25 03:52:48.160324"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'bobo@bobo.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "first_name", "last_name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-08-25 03:52:48.284124"], ["email", "bobo@bobo.com"], ["first_name", "Bobolink"], ["last_name", "Yim"], ["password_digest", "$2a$10$j3b.9X9t7UF7hBV.ymMTPOUEjcZtfNysyEpD3xCuiLSpDsBZI7BUK"], ["updated_at", "2014-08-25 03:52:48.284124"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (15.8ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "DIY selfies Intelligentsia, iPhone kale chips asymmetrical next level Brooklyn street art VHS 90's pug occupy. Quinoa Truffaut flexitarian chia paleo, Carles drinking vinegar DIY shabby chic irony. Williamsburg High Life roof party mustache, Godard farm-to-table disrupt pug. XOXO pickled artisan vegan, Carles letterpress selfies DIY organic tote bag wolf disrupt slow-carb sartorial. Hashtag kitsch literally readymade, normcore street art pug try-hard photo booth locavore. Trust fund craft beer quinoa, church-key before they sold out 90's twee whatever American Apparel chambray raw denim. Kickstarter American Apparel Shoreditch viral disrupt, selfies sustainable hashtag."], ["created_at", "2014-08-25 03:52:48.955733"], ["title", "doloremque tenetur repellendus laudantium"], ["updated_at", "2014-08-25 03:52:48.955733"], ["user_id", 1]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("content", "created_at", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["content", "Ethnic synth hashtag, iPhone salvia flexitarian tousled locavore Echo Park flannel ethical biodiesel squid leggings tote bag. Cliche High Life biodiesel lomo. Shoreditch disrupt Tonx VHS pop-up, Truffaut you probably haven't heard of them meggings raw denim synth sustainable flannel Marfa. Keffiyeh fixie squid narwhal fashion axe gluten-free, master cleanse put a bird on it post-ironic synth. Small batch fashion axe kale chips salvia, literally Williamsburg fixie jean shorts biodiesel Shoreditch messenger bag Marfa wayfarers. Try-hard paleo gentrify American Apparel, next level twee Intelligentsia. Try-hard street art next level banh mi locavore, banjo 90's actually sriracha fashion axe polaroid mixtape stumptown."], ["created_at", "2014-08-25 03:52:48.975275"], ["title", "doloremque qui iusto perferendis"], ["updated_at", "2014-08-25 03:52:48.975275"], ["user_id", 2]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Paleo Kickstarter narwhal, shabby chic lomo VHS bespoke PBR&B Williamsburg locavore gastropub. Echo Park cardigan crucifix try-hard narwhal leggings. Next level Godard chillwave skateboard whatever cray tofu, gentrify XOXO lo-fi. Austin you probably haven't heard of them Neutra deep v chambray. Deep v cliche occupy narwhal, biodiesel master cleanse Kickstarter mumblecore keytar PBR gastropub bitters meggings gentrify pickled. Tattooed Intelligentsia chillwave cornhole Tonx, scenester ugh quinoa. Sustainable ennui fixie wayfarers."], ["created_at", "2014-08-25 03:52:48.978344"], ["title", "quae itaque dolorem"], ["updated_at", "2014-08-25 03:52:48.978344"], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("content", "created_at", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["content", "Swag yr pork belly, authentic raw denim tofu seitan High Life craft beer McSweeney's plaid cornhole fashion axe Thundercats chillwave. Small batch tousled retro, fixie Pitchfork cornhole hoodie flexitarian photo booth hashtag art party XOXO tattooed bicycle rights lomo. Vegan single-origin coffee skateboard, McSweeney's 90's mumblecore banh mi Shoreditch tofu kitsch slow-carb beard. Bitters Portland put a bird on it narwhal paleo, aesthetic PBR&B tofu jean shorts stumptown single-origin coffee biodiesel fashion axe blog. Disrupt gluten-free before they sold out keffiyeh, Neutra Odd Future Cosby sweater butcher. Deep v disrupt fingerstache try-hard, paleo Schlitz skateboard. Butcher bitters 90's shabby chic fixie."], ["created_at", "2014-08-25 03:52:48.980870"], ["title", "et enim totam nobis"], ["updated_at", "2014-08-25 03:52:48.980870"], ["user_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Fanny pack 3 wolf moon ennui retro, 90's stumptown shabby chic brunch crucifix yr Tumblr polaroid. DIY shabby chic wayfarers mumblecore single-origin coffee Williamsburg, American Apparel banjo biodiesel pickled fashion axe. Hella biodiesel McSweeney's Tumblr, viral fashion axe kogi bespoke Banksy Echo Park mixtape whatever. DIY butcher synth, lomo Kickstarter hella Godard brunch mixtape 8-bit. Irony Portland fap synth Cosby sweater brunch, American Apparel ethical Vice PBR&B. McSweeney's mlkshk flannel, whatever flexitarian chillwave disrupt bespoke keytar. Vice letterpress synth, four loko Tonx wayfarers Thundercats blog."], ["created_at", "2014-08-25 03:52:48.983323"], ["title", "earum occaecati odio"], ["updated_at", "2014-08-25 03:52:48.983323"], ["user_id", 1]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mPost Load (1.0ms)[0m  [1mSELECT  "posts".* FROM "posts"   ORDER BY "posts"."id" ASC LIMIT 1[0m
