@@ -1,5 +1,6 @@
 <div class="post-container">
 
+	<div class="one-post">
 	<h1><%= @post.title %> <span class="post-date"><%= @post.date %></span></h1>
 	<p><%= @post.content %></p>
 
@@ -7,5 +8,6 @@
 			<a href="/posts/<%= @post.id %>/edit" class="post-buttons"><button>Edit</button></a></li>
 			<a href="/posts/<%= @post.id %>/delete" class="post-buttons"><button>Delete</button></a></li>
 		<% end %>
+	</div>
 
 </div>
