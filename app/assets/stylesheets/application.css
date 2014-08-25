@@ -35,7 +35,7 @@ body {
 
 .yim-blog {
 	position: absolute;
-	left:40%;
+	left:25%;
 	margin-top: 0px;
 	color: ghostwhite;
 	font-weight: 100;
@@ -48,7 +48,7 @@ body {
 }
 
 .yim-blog a:hover{
-	color:grey;
+	color: #1986E0;
 }
 
 .big-yim {
@@ -70,10 +70,6 @@ body {
 	margin: 2px 8px;
 }
 
-.container {
-	padding: 20px;
-}
-
 .log-in form {
 		position: absolute;
 		right: 80px;
@@ -83,12 +79,22 @@ body {
 	display:inline;
 	border: none;
 	margin: 0;
+}
 
+.log-in input {
+	border-radius: 2px;
+	border: none;
+	padding: 2px;
+}
+
+.log-in input[type="submit"]{
+	padding: 3px;
 }
 
 .signup_form input {
 	display: block;
 	margin: 20px;
+	border-radius: 6px;
 }
 
 h1.create-user {
@@ -110,13 +116,24 @@ button {
 }
 
 .container {
-	margin-top: 60px;
+	margin-top: 70px;
 }
 
 .post {
 	border: 1px dotted grey;
-	margin: 10px;
+	margin: 20px auto;
+	width: 90%;
 }
+
+.post a {
+	text-decoration: none;
+	color: #002e54;
+}
+
+.post a:hover {
+	color: #1986E0;
+}
+
 
 h3.title {
 	position:relative;
@@ -126,7 +143,15 @@ h3.title {
 }
 
 .post-date {
-	font-size: 65%
+	font-size: 55%;
+	font-weight: 100;
+}
+
+.post-container {
+	margin: 80px auto;
+	border: 1px dotted black;
+	width: 90%;
+	padding: 20px;
 }
 
 h5.username {
@@ -146,13 +171,13 @@ h1.create {
 .create-container {
 	margin: 80px auto;
 	border: 1px dotted black;
-	width: 50%;
+	width: 90%;
 }
 
 .edit-container {
 	margin: 80px auto;
 	border: 1px dotted black;
-	width: 50%;
+	width: 90%;
 }
 
 h1.edit {
@@ -162,6 +187,15 @@ h1.edit {
 .edit-form input {
 	display:block;
 	margin: 10px auto;
+	border: 1px dotted grey;
+	border-radius: 2px;
+	padding: 5px;
+	width: 40%;
+}
+
+.edit-form input[type="submit"] {
+	width: 15%;
+	background-color: white;
 }
 
 .edit-form button {
@@ -176,8 +210,9 @@ h1.edit {
 .edit-form textarea{
 	display:block;
 	margin:auto;
-	width: 300px;
+	width: 60%;
 	height: 200px;
+	border: 1px dotted grey;
 }
 
 .edit-form label {
@@ -187,6 +222,7 @@ h1.edit {
 
 .signup_form input {
 	margin: 10px auto;
+	border-radius: 6px
 }
 
 

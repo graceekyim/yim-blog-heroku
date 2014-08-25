@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create(first_name: "Grace", last_name: "Yim", email: "grace@grace.com", password: "testing", password_confirmation: "testing")
-User.create(first_name: "Bobolink", last_name: "Yim", email: "bobo@bobo.com", password: "testing", password_confirmation: "testing")
+User.create(first_name: "Bobo", last_name: "Yim", email: "bobo@bobo.com", password: "testing", password_confirmation: "testing")
 
 test = Faker::Lorem.words(4).join(" ")
 Post.create(title: test, user_id: 1,

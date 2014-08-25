@@ -2,7 +2,10 @@
 	<% @posts.each do |post| %>
 
 		<div class="post">
-			<h3 class="title"><%= post.title %> <span class="post-date"><%= post.date %></h3>
+			<%= link_to post do %> 
+			<h3 class="title"><%= post.title %> <span class="post-date"><%= post.date %></span></h3>
+			<% end %>
+
 			<h5 class="username"><%= post.user.full_name %></h5>
 
 			<p class="content"><%= post.content %></p>
